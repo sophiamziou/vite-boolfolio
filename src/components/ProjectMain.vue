@@ -1,6 +1,10 @@
 <script>
 import axios from "axios";
+import ProjectCard from "./ProjectCard.vue";
 export default {
+  components: {
+    ProjectCard,
+  },
   name: "ProjectMain",
   data() {
     return {
@@ -38,21 +42,24 @@ export default {
           <div class="loader my-4"></div>
         </div>
         <div v-else class="d-flex flex-wrap justify-content-center">
-          <div class="card m-3" :key="project.id" v-for="project in projects">
-            <img
-              class="card-img-top"
-              :src="
-                project.cover_image != null
-                  ? project.cover_image
-                  : 'https://picsum.photos/200/300'
-              "
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ project.title }}</h5>
-              <p class="card-text">{{ project.content }}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+          <div :key="project.id" v-for="project in projects">
+            <ProjectCard :project="project"></ProjectCard>
+            <!-- <div class="card m-3">
+              <img
+                class="card-img-top"
+                :src="
+                  project.cover_image != null
+                    ? `${this.baseUrl}/storage/${project.cover_image}`
+                    : 'https://picsum.photos/200/300'
+                "
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.content }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
