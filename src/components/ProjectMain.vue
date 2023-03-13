@@ -33,12 +33,12 @@ export default {
       <div class="col-12">
         <h1 class="m-2">BOOLFOLIO</h1>
       </div>
-      <div class="col-12">
+      <div class="col">
         <div v-if="loading">
           <div class="loader my-4"></div>
         </div>
-        <div v-else>
-          <div class="card" :key="project.id" v-for="project in projects">
+        <div v-else class="d-flex flex-wrap justify-content-center">
+          <div class="card m-3" :key="project.id" v-for="project in projects">
             <img
               class="card-img-top"
               :src="
@@ -60,6 +60,9 @@ export default {
   </div>
 </template>
 <style lang="scss">
+.card {
+  width: 300px;
+}
 .loader {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
