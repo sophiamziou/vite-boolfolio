@@ -2,6 +2,6 @@
 export default {};
 </script>
 <template lang="">
-  <div>hello</div>
+  <div>MARTELLINO STUPIDINO</div>
 </template>
 <style lang=""></style>
