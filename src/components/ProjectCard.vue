@@ -22,7 +22,11 @@ export default {
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
       <p class="card-text">{{ project.content }}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div>
+        <router-link :to="{ name: 'single-project', params: { slug: project.slug }}" class="btn btn-primary">
+          visualizza progetto 
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
