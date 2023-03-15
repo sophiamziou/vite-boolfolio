@@ -13,6 +13,9 @@ export default {};
             >Portfolio</router-link
           >
         </li>
+        <li class="nav-item">
+          <router-link to="/contacts" class="nav-link active">Contacts</router-link>
+        </li>
       </ul>
     </header>
   </div>
